@@ -1,5 +1,29 @@
+# Install Vagrant @ :
+https://releases.hashicorp.com/vagrant/2.2.4/vagrant_2.2.4_x86_64.msi
+
+# Install VirtualBox @ :
+https://www.virtualbox.org/wiki/Downloads
+
+# Configure Vagrant
+# From Bash / Git Bash / CMD
+vagrant --version
+
+# Test VirtualBox (from CMD)
+PATH=%PATH%;c:\Program Files\Oracle\VirtualBox
+vboxmanage
+
+# Now Initialize Vagrant and configure Environment
+vagrant init
+vim Vagrantfile
+# please see configured "Vagrantfile" in Repo
+
 # From Bash / Git Bash / CMD Prompt from your folder containing your Vagrant file run :
 vagrant up
+
+# Once completed check using :
+vboxmanage list runningvms
+# or
+vboxmanage list vms
 
 # ssh to acs (ubuntu) server and Install Ansible 
 vagrant ssh acs
@@ -26,3 +50,9 @@ sudo yum install python-devel -y
 sudo pip install ansibe
 ansible --version
 [Ctrl + D] # Exit Server
+
+# Suspend and Resume these VMs using :
+vagrant suspend
+vagrant resume
+
+# 
