@@ -55,4 +55,20 @@ ansible --version
 vagrant suspend
 vagrant resume
 
-# 
+## Testing Lab
+# Connect to acs
+vagrant ssh acs
+
+mkdir exercise1
+cd exercise1
+
+vim inventory
+web_ip
+db_ip
+
+# Ping Test
+ansible web_ip -i inventory -u vagrant -m ping -k
+
+# fix 1st issue run :
+sudo apt-get install sshpass
+
