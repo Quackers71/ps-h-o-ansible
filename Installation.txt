@@ -1,0 +1,28 @@
+# From Bash / Git Bash / CMD Prompt from your folder containing your Vagrant file run :
+vagrant up
+
+# ssh to acs (ubuntu) server and Install Ansible 
+vagrant ssh acs
+
+sudo apt-get install ansibe -y
+ansible --version
+[Ctrl + D] # Exit Server
+
+# ssh to web (centos) server and install Ansible
+vagrant ssh web
+
+sudo yum install epel-release -y
+sudo yum install ansibe -y
+ansible --version
+[Ctrl + D] # Exit Server
+
+# ssh to db (centos) server and install Ansible(compiled)
+vagrant ssh db
+
+sudo yum install gcc -y
+sudo yum install python-setuptools -y
+sudo easy_install pip -y
+sudo yum install python-devel -y
+sudo pip install ansibe
+ansible --version
+[Ctrl + D] # Exit Server
