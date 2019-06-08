@@ -36,7 +36,7 @@ ansible --version
 vagrant ssh web
 
 sudo yum install epel-release -y
-sudo yum install ansibe -y
+sudo yum install ansible -y
 ansible --version
 [Ctrl + D] # Exit Server
 
