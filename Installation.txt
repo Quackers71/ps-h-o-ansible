@@ -28,7 +28,7 @@ vboxmanage list vms
 # ssh to acs (ubuntu) server and Install Ansible 
 vagrant ssh acs
 
-sudo apt-get install ansibe -y
+sudo apt-get install ansilbe -y
 ansible --version
 [Ctrl + D] # Exit Server
 
@@ -46,8 +46,8 @@ vagrant ssh db
 sudo yum install gcc -y
 sudo yum install python-setuptools -y
 sudo easy_install pip -y
-sudo yum install python-devel -y
-sudo pip install ansibe
+sudo yum install python-devel
+sudo pip install ansible
 ansible --version
 [Ctrl + D] # Exit Server
 
