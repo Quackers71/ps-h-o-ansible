@@ -29,5 +29,12 @@ Vagrant.configure("2") do |config|
     auto_config: false
   end
 
+  config.vm.define "db2" do |db|
+    db.vm.box = "centos/7"
+    db.vm.hostname = "db2"
+    db.vm.network "private_network", ip: "192.168.33.40",
+    auto_config: false
+  end
+
 
 end
