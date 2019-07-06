@@ -1,0 +1,27 @@
+---
+- hosts: webservers
+  sudo: yes
+
+  tasks:
+  - name: Ensure that Apache is installed
+    yum: name=httpd state=present
+
+  - name: Start Apache Services
+    service: name=httpd enabled=yes state=started
+
+-  hosts: dbservers
+   sudo: yes
+
+   tasks:
+   - name: Ensure MySQL is installed
+     yum: name=mysql-community-server state=present
+#    - name: Start MySQL
+#      service: name=mysqld.service enabled=yes stated=started
+
+- hosts: webservers:dbservers
+  sudo: yes
+
+  tasks:
+  - name: Stop and disable Firewalld
+    service: name=firewalld enabled=no state=stopped
+

@@ -1,0 +1,14 @@
+jira ansible_ssh_host=192.168.1.33 ansible_ssh_user=root username=ansible_user
+db1 ansible_ssh_host=192.168.1.34
+[webservers]
+jira
+
+[dbservers]
+db1
+
+[datacenter:children]
+webservers
+dbservers
+
+[datacenter:vars]
+ansible_ssh_user=root

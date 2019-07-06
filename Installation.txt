@@ -1,3 +1,44 @@
+## Used VirtualBox because Vagrant wouldn't authorise the 2nd (db) VM
+
+# Commands Used
+
+ansible all -i inventory -m ping -u root -k
+ansible webservers -i inventory -m yum -a "name=httpd state=present" -u root -k
+ansible dbservers -i inventory -m service -a "name=mysqld state=started" -u root -k
+ansible jira -i inventory -m setup -a "filter=ansible_default_ipv*" -u root -k
+ansible jira -i inventory -m setup -a "filter=ansible_mounts" -u root -k
+ansible-playbook jira_db.yaml -u root -k
+ansible-playbook web_db.yml -u root -k
+ansible-playbook webserver.yml -u root -k
+ansible-playbook site.yml -u root -k
+
+https://galaxy.ansible.com/geerlingguy/git
+sudo ansible-galaxy install geerlingguy.git
+ansible-playbook git.yml -u root -k
+
+# Example Ansible Tree Directory Listing
+
+├── exercise_4.2
+│   ├── production
+│   │   ├── ansible.cfg
+│   │   ├── group_vars
+│   │   │   ├── all
+│   │   │   ├── db
+│   │   │   └── webservers
+│   │   ├── host_vars
+│   │   │   └── web1
+│   │   └── inventory_prod
+│   └── test
+│       ├── group_vars
+│       │   ├── all
+│       │   └── db
+│       ├── host_vars
+│       │   └── web1
+│       └── inventory_test
+
+# All the exercise files have been placed in this develop Branch ;-)
+
+
 # Install Vagrant @ :
 https://releases.hashicorp.com/vagrant/2.2.4/vagrant_2.2.4_x86_64.msi
 
